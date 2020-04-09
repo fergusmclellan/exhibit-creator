@@ -22,9 +22,9 @@ CHARACTER_WIDTH_PX = 9
 BORDER_PADDING_PX = 6
 """
 Exhibit max size = 950 * 600 pixels
-104 characters * 9 pixels per char = 936 pixels, plus 7 pixel border at both sides = 950 pixels
-34 lines of text * 17 pixels per line = 578 pixels, plus 7 pixel border at top and bottom
-= 592 pixels height (max permitted = 600)
+104 characters * 9 pixels per char = 936 pixels, plus 6 pixel border at both sides = 948 pixels
+34 lines of text * 17 pixels per line = 578 pixels, plus 6 pixel border at top and bottom
+= 590 pixels height (max permitted = 600)
 """
 LIMIT_EXHIBIT_MAX_CHAR = 104
 LIMIT_EXHIBIT_MAX_LINES = 34
@@ -397,7 +397,7 @@ class DnDImagesPage(tk.Frame):
             self.this_option_no_of_lines = len(option_text_into_lines)
             if self.this_option_no_of_lines > 3:
                 messagebox.showerror(title="Error!",
-                    message="More than 3 lines of text in DnD option is not recommended. Having 1 option with > 3 lines means that ALL options and targets need to be > 3 lines in height. DnD may not fit into Exam Developer.")
+                    message="More than 3 lines of text in DnD option is not recommended. Having 1 option with > 3 lines means that ALL options and targets need to be > 3 lines in height. DnD may not fit into available space.")
                 return
             else:
                 selected_text_start, selected_text_stop = self.dnd_main_text_entry.tag_ranges('sel')
